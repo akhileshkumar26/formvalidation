@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html>
+<head>
+       <title>javascript form validation</title>
+</head>
+<body>
+
+   <form  action="#" method ="post" onsubmit ="return validation();">
+  FirstName:<input type ="text" name ="name" id = "firstname"> <br>
+  LastName:  <input type ="text" name ="name" id = "lastname"><br>
+  Email:     <input type ="email" name ="email" id = "email"><br>
+  Password:  <input type ="password" name ="password" id = "password"><br>
+  Number:    <input type ="number" name ="number" id = "number"><br>
+            <input type ="submit" name ="submit" value = "submit">
+
+</form>
+<div id="result"></div>
+<script>
+         function validation(){
+  var firstname=document.getElementById('firstname').value ;
+
+  var lastname=document.getElementById('lastname').value ;    
+  var email=document.getElementById('email').value ;
+  var firstname=document.getElementById('password').value ;
+  var number=document.getElementById('number').value ;
+  if(firstname=='' || lastname =='' ||  email =='' || number ==''|| password =='')
+{
+    document.getElementById("result").innerHTML="all field required";
+ return false;
+}
+ else if(firstname.length<4 )
+{
+      document.getElementById("result").innerHTML="name should have required length";
+ return false;
+}
+
+else if(lastname.length<3 )
+{
+      document.getElementById("result").innerHTML="atleast three character";
+ return false;
+}
+else if(number.length<10 )
+{
+      document.getElementById("result").innerHTML="number should be valid";
+ return false;
+}
+else 
+{
+  return true;
+}
+}
+</script>
+</body>
+</html> 
